@@ -1,0 +1,533 @@
+?- write("Hello World").
+Hello World
+
+?- write("Charuka wijayananda"),
+|    nl,
+|    write("Anuradhapura").
+Charuka wijayananda
+Anuradhapura
+
+welcome :-
+       write("hello world").
+--welcome.
+
+fruit(apple).
+fruit(mango).
+?- fruit(X).
+X = apple ;
+X = mango.
+
+
+
+myname :-
+
+     write("Enter your Name:"),
+     read(Name),
+     write(Name).
+?- myname.
+Enter your Name:charuka.
+charuka
+true.
+
+mynameo :-
+
+     write("Enter the Your Name :"),
+     read(Name),
+     write("Enter the year: "),
+     read(Year),
+     write(Name),
+
+     write(Year),
+
+     write("\nWell come to the polog").
+?- mynameo.
+Enter the Your Name :charuka.
+Enter the year: |: 2.
+charuka2
+Well come to the polog
+true.
+
+
+student :-
+
+      write("Enter the Name: "),
+      read(Name),
+      write("Enter the Age: "),
+      read(Age),
+      write("Enter the Specialization: "),
+      read(Spc),
+      write("Enter the GPA: "),
+      read(GPA),
+
+      format("student: Name:~w. Age:~w. Specialization:~w. GPA:~w.",[Name,Age,Spc,GPA]).
+?- student.
+Enter the Name: charuka.
+Enter the Age: |: 25.
+Enter the Specialization: |: softwear.
+Enter the GPA: |: 2.65.
+student: Name:charuka. Age:25. Specialization:softwear. GPA:2.65.
+true.
+
+Maths Operations---------
+
+?- X=2+6.
+X = 2+6.
+
+?- X is 2+6.
+X = 8.
+
+?- A is 2-15.
+A = -13.
+
+?- Area is 1.5*2.5.
+Area = 3.75.
+
+?- B is 100/4.
+B = 25.
+
+
+bmi(Weight,Height,BMI):-
+       BMI is (Weight/(Height*Height)).
+?- bmi(55,1.65,BMI).
+BMI = 20.202020202020204.
+
+sum:-
+
+      write("Enter the first num:"),
+      read(V1),
+       write("Enter the second num: "),
+       read(V2),
+       Sum is V1+V2,
+       format("sumation of number is ~w",[Sum]).
+?- sum.
+Enter the first num:10.
+Enter the second num: |: 20.
+sumation of number is 30
+true.
+
+calculator----------
+
+operation(A,B,'+',Result):- Result is A+B.
+operation(A,B,'-',Result):- Result is A-B.
+operation(A,B,'/',Result):- Result is A/B.
+operation(A,B,'*',Result):- Result is A*B.
+
+
+cal:-
+       write("Enter 1 value: "),
+       read(V1),
+       write("Enter the 2 value: "),
+       read(V2),
+       write("select the operater you want: "),
+       read(OP),
+       operation(V1,V2,OP,Result),
+       format("Your out put is ~w",[Result]).
+
+
+Practice...................
+
+days(january,31).
+days(march,31).
+days(may,31).
+days(july,31).
+days(august,31).
+days(october,31).
+days(december,31).
+
+days(february,28).
+days(other,30).
+
+
+day_month:-
+
+       write("Enter the month:"),
+       read(X),
+       days(X,Y),
+       write(Y).
+
+?- days(X,31).
+X = january ;
+X = march ;
+X = may ;
+X = july ;
+X = august ;
+X = october ;
+X = december.
+
+?- days(X,28).
+X = february.
+
+
+cuntry-------------
+
+population(chaina,1000).
+population(india,85).
+population(usa,65).
+population(uk,80).
+
+area(chaina,10).
+area(india,4).
+area(usa,6).
+area(uk,12).
+
+densitiy(den):-
+
+        population(X,Y),
+        area(X,M),
+        Den is Y/M,
+        format("~w has ~w population and ~w area ",[X,Y,M,Den]).
+?- densitiy(den).
+chaina has 1000 population and 10 area 
+
+
+if else---------------------------
+
+gt(X,Y):- X>Y,write("X is gereter than Y").
+gt(X,Y):- X<Y,write("X is less than Y").
+
+?- gt(5,6).
+X is less than Y
+true.
+
+?- gt(7,6).
+X is gereter than Y
+true 
+
+gt(X,Y):- X =:=Y,write("both area same").
+?- gt(6,6).
+both area same
+true.
+
+
+avarage-----------------
+
+cheack(Avarage):- Avarage>=50,write("Pass").
+cheack(Avarage):- Avarage=<50,write("Fail").
+
+ stu_mark:-
+
+      write("Enter first mark:"),
+      read(M1),
+      write("Enter secont mark:"),
+      read(M2),
+      write("enter the third mark:"),
+      read(M3),
+      Avarage is(M1+M2+M3)/3,
+      cheack(Avarage).
+?- stu_mark.
+Enter first mark:50.
+Enter secont mark:|: 60.
+enter the third mark:|: 70.
+Pass
+true .
+
+loop----------------
+
+loop(N):- N>=1,write(N),
+    nl,Y is N-1,
+    loop(Y).
+
+density---------------------
+
+populations(kandy,1650).
+populations(ampara,865).
+populations(jaffna,798).
+populations(colombo,3650).
+
+areas(kandy,160).
+areas(ampara,450).
+areas(jaffna,265).
+areas(colombo,80).
+
+densit(den):-
+
+       populations(X,Y),
+       areas(X,M),
+       Den is Y/M,
+       format("~w have population:~w ,area:~w, then den ~w",[X,Y,M,Den]).
+
+
+condition-----------------
+
+like(john,pizza).
+like(john,icecreem).
+like(marry,pizza).
+like(susan,salad).
+
+foodyy(X):- like(X,pizza),like(X,icecreem).
+food(p):- like(p,pizza);like(p,salad).
+---------
+province(weston).
+distric(gampaha,weston).
+
+province(X,Y):- distric(X,Y).
+?- distric(X,weston).
+X = gampaha.
+
+
+List--------------------------------
+
+?- X=[1|[2]].
+X = [1, 2].
+
+?- X=[a,b,c,d,e].
+X = [a, b, c, d, e].
+
+?- [H|T]=[g,d,a].
+H = g,
+T = [d, a].
+
+?- [A,B,C,D|T]=[a,b,c,d,e].
+A = a,
+B = b,
+C = c,
+D = d,
+T = [e].
+
+?- [_,_,X,Y]=[f,g,d,t].
+X = d,
+Y = t.
+
+?- [_,_,X,Y|T]=[a,b,c,d,e,f].
+X = c,
+Y = d,
+T = [e, f].
+
+?- is_list([a,b,c,d,e]).
+true.
+
+?- length([a,b,c,d,e],Length).
+Length = 5.
+
+?- memberchk(a,[a,b,c,d,e]).
+true.
+
+?- append([a,b,c,d,e],[x,y,z],NewList).
+NewList = [a, b, c, d, e, x, y, z].
+
+?- sort([a,b,c,d,e,f,a,c,d,b],M).
+M = [a, b, c, d, e, f].
+
+Task01----------------
+
+colors([red,gree,yellow,black,white]).
+che:- memberchk(pink,[red,gree,yellow,black,white]).
+
+
+add list------------
+
+colors([red,gree,yellow,black,white]).
+che:- memberchk(pink,[red,gree,yellow,black,white])->
+      append([gray],[red,gree,yellow,black,white],Newlist),
+      write(Newlist);
+      append([pink],[red,gree,yellow,black,white],Newlist),
+      write(Newlist).
+
+@< ascending remove
+@=< ascending keep
+@> descending remove
+@>= descending keep
+
+
+last find-----------
+
+orderlist:-
+    sort(0,@>,[pink,blue,yellow,black,white],Newlist),
+    write("Order List:"),
+    write(Newlist),
+    last(Newlist,X),nl,
+    write("order last list:"),
+    write(X).
+
+
+count----
+
+length:-
+    length([pink,blue,yellow,black,white],Length),
+    write(Length).
+
+--------------------------------------------------------------------------------------------------------------
+
+Task 01:
+1. Create a knowledge base and implement the following instructions.
+1. Create a list of five colors and name the list as Colors and Check the pink is
+available in your list
+
+KB.......
+colors([pink,blue,yellow,black,white]).
+ check:-memberchk(pink,[pink,blue,yellow,black,white]).
+
+prolog........
+?-check.
+
+
+2. Check the user enter colour is available in your list.
+
+KB......
+checkuser:-write('Enter a colour: '),
+ read(Col),
+ memberchk(Col,[pink,blue,yellow,black,white]).
+
+Pro.......
+?-checkuser.
+Enter a color: Black.
+
+
+3. If pink color is unavailable, then add pink to the list. If pink color is
+available then add grey to the list.
+
+KB..........
+avilablecheck:-memberchk(pink,[pink,blue,yellow,black,white]) ->
+ append([grey],[pink,blue,yellow,black,white],NewList),
+ write(NewList);
+ append([pink],[pink,blue,yellow,black,white],NewList),
+ write(NewList).
+
+Pro.........
+?-avilablecheck.
+[grey,pink,blue,yellow,black,white]
+
+
+
+4. Order the list into descending order and display the last colour in the list.
+
+KB.........
+orderlist:-sort(0,@>,[pink,blue,yellow,black,white],NewList),
+ write('descending ordered list: '),
+ write(NewList),
+ last(NewList,X),nl,
+ write('descending ordered list last item: '),
+ write(X).
+
+Pro...........
+?-orederlist.
+decending ordered list:[].
+decending ordered list last item: Black
+
+
+
+Order	Ordering	Duplicate
+@<	ascending	remove
+@=<	ascending	keep
+@>	descending	remove
+@>=	descending 	keep
+
+
+
+5. Display the number of colors in the list.
+
+KB......
+lengthchk:-length([pink,blue,yellow,black,white],Length),
+ write(Length).
+
+Pro......
+?-lengthchk.
+5
+
+
+
+
+Task 02:
+
+1. Create a knowledge base to store student and their score details.
+
+KB.......
+student(name(['Saman', 'Perera']), 11021).
+student(name(['Mohamed', 'Humaith']), 11022).
+student(name(['Nimal', 'Silva']), 11023).
+student(name(['Viji', 'Kumar']), 11024).
+student(name(['Lasantha', 'Jayamanna']), 11025).
+student(name(['Namal', 'Silva']), 11026).
+student(name(['Ponnambalam', 'Ramanadan']), 11027).
+
+marks(11021, score([50, 71, 57, 65, 61])).
+marks(11022, score([65, 50, 85, 49, 82])).
+marks(11023, score([100, 85, 100, 89, 76])).
+marks(11024, score([73, 65, 59, 82, 66])).
+marks(11025, score([60, 90, 78, 96,100])).
+
+
+
+2. Is Janaka Silva an undergraduate student?
+
+KB.....
+checkname:-student(name(['Janaka','Silva']),_).
+
+Pro.........
+?-checkname.
+
+
+3. Who are the registered undergraduates in the departments?
+
+KB......
+registeredstd(X,Y,Z):-student(name([X,Y]),Z).
+
+Pro.........
+?-registeredstd(X.Y.Z).
+X='Saman',
+Y='Perera',
+Z='11021';
+
+
+
+4. Check user entered student registered or not in in the departments?
+
+KB..........
+userinputchk(Fname,Lname):-student(name([Fname,Lname]),_) ->
+ write('Registered');
+ write('Not Registered').
+
+Pro......
+?-userinputshk('Supun','Kumara').
+Not Registered
+
+
+5. What is the index no of Silva?
+
+KB.......
+indexcheck(Lname):-student(name([Fname,Lname]),Index),
+ write(Fname),
+ write(' '),
+ write(Lname),nl,
+ write(Index).
+
+Pro............
+?-indexcheck('Silva').
+Nimal Silava
+11023
+true;
+
+
+
+6. Who sat the examination?
+
+KB.............
+whosatexam:-student(name([Fname,Lname]),Index),
+ marks(Index,score(_)),
+ write(Fname),write(' '),
+ write(Lname),write(' '),
+ write(Index).
+
+Pro............
+?-whosatexam.
+Saman Perera 11021
+True;
+
+
+
+7. Who missed the examination?
+
+KB............
+whomissexam:-student(name([Fname,Lname]),Index),
+ not(marks(Index,score(_))),
+ write(Fname),write(' '),
+ write(Lname),write(' '),
+ write(Index).
+
+Pro.............
+?-whimissexam.
+Namal Silva 11026
+true;
+
+
+
